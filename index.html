@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saima Rizwan | Premium Skincare</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-fontawesome/6.4.0/css/all.min.css">
+    <!-- Font Awesome Link for Stars -->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>Your Ritual Bag (<span id="cart-count-badge">0</span>)</h3>
+            <span class="close-cart" id="close-cart">&times;</span>
+        </div>
+        
+        <div class="cart-items-container" id="cart-items-container">
+            <p class="empty-cart-text">Your bag is currently empty.</p>
+        </div>
+
+        <div class="checkout-form-wrapper" id="checkout-form-wrapper" style="display: none;">
+            <h4>Shipping Details</h4>
+            <form id="direct-checkout-form">
+                <div class="form-group">
+                    <input type="text" id="cust-name" placeholder="Full Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="cust-phone" placeholder="Phone Number" required>
+                </div>
+                <div class="form-group">
+                    <select id="cust-province" required>
+                        <option value="" disabled selected>Select Province</option>
+                        <option value="Punjab">Punjab</option>
+                        <option value="Sindh">Sindh</option>
+                        <option value="KPK">Khyber Pakhtunkhwa (KPK)</option>
+                        <option value="Balochistan">Balochistan</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="cust-city" placeholder="City Name" required>
+                </div>
+                <div class="form-group">
+                    <textarea id="cust-address" placeholder="Complete Delivery Address" rows="2" required></textarea>
+                </div>
+            </form>
+        </div>
+
+        <div class="cart-footer">
+            <div class="cart-total-row">
+                <span>Subtotal:</span>
+                <span id="cart-subtotal-price">$0.00</span>
+            </div>
+            
+            <div class="cart-total-row delivery-row" id="delivery-row" style="display: none;">
+                <span>Delivery Charges:</span>
+                <span id="cart-delivery-price">$5.00</span>
+            </div>
+            
+            <div class="cart-total-row grand-total-row" id="grand-total-row" style="display: none; font-weight: 600; border-top: 1px solid #eee; padding-top: 10px;">
+                <span>Total Amount:</span>
+                <span id="cart-grand-total">$0.00</span>
+            </div>
+
+            <button class="btn checkout-btn" id="main-checkout-trigger">Proceed to Checkout</button>
+        </div>
+    </div>
+    <div class="cart-overlay" id="cart-overlay"></div>
+
+    <div class="order-success-popup" id="order-success-popup">
+        <div class="success-popup-content">
+            <div class="success-icon">✓</div>
+            <h2>Order Submitted Successfully</h2>
+            <p>Thank you so much for supporting our premium skincare rituals. Your clean beauty journey starts now.</p>
+        </div>
+    </div>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">SAIMA RIZWAN</div>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#collection">Collection</a></li>
+                <li><a href="#about">Our Philosophy</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-icons">
+                <a href="#" id="search-trigger-btn"><i class="fa-solid fa-magnifying-glass"></i></a>
+                
+                <a href="#" id="cart-icon-trigger" class="cart-nav-link">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="nav-cart-badge" id="nav-cart-badge">0</span>
+                </a>
+                
+                <div class="menu-toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+            </div>
+        </nav>
+    </header>
+    
+<section id="collection" class="products-section">
+        <!-- 1. Agar ye do baar likha hai, to ek ko delete kar dein -->
+        <div class="section-header">
+            <h2>The Essentials</h2>
+            <p>Our signature minimalist routine for timeless, radiant skin.</p>
+        </div>
+
+        <!-- Iske niche aapka search box chalna chahiye -->
+        <div class="search-wrapper-box">
+            <input type="text" id="product-search-input" placeholder="Search our premium ritual essentials (e.g., harbal wax, soap)...">
+            <i class="fa-solid fa-magnifying-glass search-field-icon"></i>
+        </div>
+        <!-- Premium Filter Tabs -->
+        <div class="filter-container">
+            <button class="filter-btn active" data-filter="all">All Products</button>
+            <button class="filter-btn" data-filter="serum">Harbal Wax</button>
+            <button class="filter-btn" data-filter="cream">Soap & Oils</button>
+        </div>
+ 
+     <div class="product-grid">
+    <!-- Product 1 (Serum) -->
+    <div class="product-card" data-category="serum">
+        <div class="product-img">
+            <!-- Primary Image -->
+            <img src="./images/file_00000000cc2c7208a125117c3aac611d.pNG" alt="Radiance Serum" class="primary-img">
+            <!-- Added Hover Image -->
+            <img src="./images/image.png" alt="Radiance Serum Detail" class="hover-img">
+            
+            <span class="tag">Best Seller</span>
+            <button class="add-to-cart-btn">Quick Add</button>
+        </div>
+        <div class="product-info">
+            <h3>Halawa Wax</h3>
+            <p class="category">Remove Hair</p>
+            <div class="product-stars">★★★★★ <span class="rating-count">(1.9 k)</span></div>
+            <p class="price">$48.00</p>
+        </div>
+    </div>
+
+    <!-- Product 2 (Cream/Oil) -->
+    <div class="product-card" data-category="cream">
+        <div class="product-img">
+            <!-- Primary Image -->
+            <img src="./images/Gemini_Generated_Image_l5qicsl5qicsl5qi.png" alt="Cleansing Oil" class="primary-img">
+            <!-- Added Hover Image -->
+            <img src="./images/Gemini_Generated_Image_6qjoeg6qjoeg6qjo.png" alt="Cleansing Oil Detail" class="hover-img">
+            
+            <button class="add-to-cart-btn">Quick Add</button>
+        </div>
+        <div class="product-info">
+            <h3>Zest Neem</h3>
+            <p class="category">Acne Clean & Extra Oil Control</p>
+            <div class="product-stars">★★★★☆ <span class="rating-count">(8)</span></div>
+            <p class="price">$36.00</p>
+        </div>
+    </div>
+
+    <!-- Product 3 (Cream/Oil) -->
+    <div class="product-card" data-category="cream">
+        <div class="product-img">
+            <!-- Primary Image -->
+            <img src="./images/Gemini_Generated_Image_1mmklk1mmklk1mmk.png" alt="Barrier Cream" class="primary-img">
+            <!-- Added Hover Image -->
+            <img src="./images/Gemini_Generated_Image_uqvyx7uqvyx7uqvy.png" alt="Barrier Cream Detail" class="hover-img">
+            
+            <button class="add-to-cart-btn">Quick Add</button>
+        </div>
+        <div class="product-info">
+            <h3>Harbal Hair Oil</h3>
+            <p class="category">Scalp Health & Dandruff Control</p>
+            <div class="product-stars">★★★★★ <span class="rating-count">(19)</span></div>
+            <p class="price">$52.00</p>
+        </div>
+    </div>
+</div>
+
+        <!-- Write a Review Form Box -->
+        <div class="review-form-container">
+            <h3>Share Your Experience</h3>
+            <p>Tell us how Saima Rizwan products transformed your skincare ritual.</p>
+            <form id="product-review-form">
+                <div class="rating-input-wrapper">
+                    <span>Your Rating: </span>
+                    <div class="star-rating-select">
+                        <i class="fa-regular fa-star" data-rating="1"></i>
+                        <i class="fa-regular fa-star" data-rating="2"></i>
+                        <i class="fa-regular fa-star" data-rating="3"></i>
+                        <i class="fa-regular fa-star" data-rating="4"></i>
+                        <i class="fa-regular fa-star" data-rating="5"></i>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="review-user" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <textarea id="review-text-content" placeholder="Write your honest review here..." rows="3" required></textarea>
+                </div>
+                <button type="submit" class="btn">Submit Review</button>
+                <div id="review-status-msg" style="margin-top: 15px; font-size: 0.9rem; color: var(--accent-color);"></div>
+            </form>
+        </div>
+    </section>
+    <section id="about" class="about-section">
+        <div class="about-container">
+            <div class="about-text">
+                <span class="sub-title">Clean Beauty</span>
+                <h2>Formulated Without Compromise</h2>
+                <p>At Saima Rizwan, we believe skincare should be an authentic act of self-care. We craft our products using only the finest herbal extracts and potent organic ingredients, blending nature’s wisdom with purity to deliver visible, healthy results.</p>
+                <p>We are committed to a clean, chemical-free approach: no parabens, no synthetic fragrances, and no artificial fillers. Just pure, plant-based nourishment designed to strengthen your skin barrier and bring out your natural glow. Experience the power of nature, refined for your daily routine.</p>
+            </div>
+            <div class="about-image">
+                <img src="./images/file_00000000cc2c7208a125117c3aac611d.pNG" alt="Skincare Texture">
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="newsletter-box">
+            <h2>Join the Inner Circle</h2>
+            <p>Subscribe to receive exclusive skincare tips, product launches, and 15% off your first order.</p>
+            <form id="newsletter-form" class="newsletter-form">
+                <input type="email" id="email-input" placeholder="Your email address" required>
+                <button type="submit" class="submit-btn">Subscribe</button>
+            </form>
+            <div id="form-message" class="form-message"></div>
+        </div>
+    </section>
+
+   
+        <section id="quiz" class="quiz-section">
+        <div class="quiz-container">
+            <span class="sub-title">Find Your Routine</span>
+            <h2>Discover Your Perfect Match</h2>
+            <p>Answer three quick questions about your skin type, and we will curate a personalized Saima Rizwan regimen tailored just for you.</p>
+            
+            <div class="quiz-box" id="quiz-box">
+                <div class="quiz-step active" data-step="1">
+                    <h3>What is your primary skin concern?</h3>
+                    <div class="quiz-options">
+                        <button class="quiz-opt" data-value="glow">Stubborn Hair Growth</button>
+                        <button class="quiz-opt" data-value="moisture">Acne and Breakouts</button>
+                        <button class="quiz-opt" data-value="purify">Excessive Hair Fall</button>
+                    </div>
+                </div>
+                
+                <div class="quiz-result" id="quiz-result">
+                    <h3>Your Recommended Ritual:</h3>
+                    <div class="recommendation-card" id="recommendation-card">
+                        </div>
+                    <button class="btn" id="reset-quiz-btn">Retake Quiz</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials-section">
+        <div class="section-header">
+            <h2>Real Results</h2>
+            <p>What our clients say about their glowing transformation.</p>
+        </div>
+        <div class="testimonial-slider">
+            <div class="testimonial-track">
+                <div class="slide active">
+                    <p class="review-text">"The Radiance Elixir completely changed my skin texture. My natural glow is back, and I feel confident going completely makeup-free."</p>
+                    <h4 class="client-name">Ayesha K.</h4>
+                    <div class="stars">★★★★★</div>
+                </div>
+                <div class="slide">
+                    <p class="review-text">"The Barrier Cream feels incredibly premium and deeply hydrating without being heavy or greasy. Perfect for sensitive skin."</p>
+                    <h4 class="client-name">Zainab M.</h4>
+                    <div class="stars">★★★★★</div>
+                </div>
+            </div>
+            <div class="slider-dots">
+                <span class="dot active" data-slide="0"></span>
+                <span class="dot" data-slide="1"></span>
+            </div>
+        </div>
+    </section>
+
+    <div class="booking-cta">
+        <button class="btn booking-trigger-btn" id="open-booking">Book a Consultation</button>
+    </div>
+
+    <div class="booking-modal" id="booking-modal">
+        <div class="modal-content">
+            <span class="close-modal" id="close-booking">&times;</span>
+            <span class="sub-title">Saima Rizwan Studio</span>
+            <h2>Schedule a Skin Consultation</h2>
+            <p>Meet with our expert specialists for a personalized skincare evaluation.</p>
+            
+            <form id="consultation-form" action="https://formspree.io/f/your-endpoint-id" method="POST">
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Full Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Email Address" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="date" name="date" required>
+                    </div>
+                    <div class="form-group">
+                        <select name="time" required>
+                            <option value="" disabled selected>Select Time Slot</option>
+                            <option value="11:00 AM">11:00 AM - 12:00 PM</option>
+                            <option value="02:00 PM">02:00 PM - 03:00 PM</option>
+                            <option value="05:00 PM">05:00 PM - 06:00 PM</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <textarea name="notes" placeholder="Tell us briefly about your skin history (optional)" rows="4"></textarea>
+                </div>
+                <button type="submit" class="btn submit-booking-btn">Confirm Request</button>
+            </form>
+        </div>
+    </div> 
+    
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>SAIMA RIZWAN</h3>
+                <p>Elevating daily rituals into luxurious experiences.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="#collection">Shop All</a></li>
+                    <li><a href="#about">Our Story</a></li>
+                    <li><a href="#">Sustainability</a></li>
+                </ul>
+            </div>
+            <div class="footer-socials">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-pinterest"></i></a>
+                    <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Saima Rizwan Luxury Skincare. All rights reserved.</p>
+        </div>
+    </footer>
+<!-- Premium WhatsApp Concierge -->
+<div class="whatsapp-concierge-wrapper">
+    <!-- Chat Box Window -->
+    <div class="whatsapp-chat-box" id="whatsapp-chat-box">
+        <div class="chat-box-header">
+            <div class="concierge-profile">
+                <div class="profile-avatar">SR</div>
+                <div class="profile-info">
+                    <h4>Saima Rizwan Studio</h4>
+                    <p><span class="online-dot"></span> Typically replies in minutes</p>
+                </div>
+            </div>
+            <button class="chat-close-btn" id="close-whatsapp-box">&times;</button>
+        </div>
+        <div class="chat-box-body">
+            <p class="chat-welcome-msg">Salam! Welcome to Saima Rizwan Luxury Skincare. How can we elevate your daily beauty ritual today?</p>
+        </div>
+        <div class="chat-box-footer">
+            <!-- Dynamic WhatsApp URL with Real Number and Encoded Salam Message -->
+            <a href="https://wa.me/923280740364?text=Salam%20Saima%20Rizwan%20Studio%2C%20I%20want%20to%20ask%20about%20your%20premium%20skincare%20products." 
+               target="_blank" 
+               class="whatsapp-direct-link">
+                <i class="fa-brands fa-whatsapp"></i> Start Chat on WhatsApp
+            </a>
+        </div>
+    </div>
+
+    <!-- Floating Toggle Button -->
+    <button class="whatsapp-trigger-btn" id="toggle-whatsapp-box" aria-label="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </button>
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
