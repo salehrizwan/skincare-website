@@ -504,9 +504,12 @@ document.querySelectorAll('.product-card').forEach(card => {
         document.getElementById('qv-price').innerText = price;
         document.getElementById('qv-img').src = img;
         document.getElementById('qv-desc').innerText =
-            "Premium quality skincare essential designed for your daily routine.";
+            "Discover premium herbal skincare crafted with natural, chemical-free ingredients to nourish and protect your skin. Our handmade collection of oils, soaps, and wax products is designed to provide gentle yet effective care for all skin types. Blending traditional herbal remedies with modern skincare standards, our products help improve skin health, hydration, and natural glow. We focus on purity, quality, and eco-friendly beauty solutions that are safe for daily use. Experience the luxury of nature with our herbal range and upgrade your skincare routine with clean, effective, and long-lasting results.";
+
 
         qvModal.style.display = 'flex';
+
+
     });
 });
 
