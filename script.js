@@ -484,25 +484,38 @@ if (closeWhatsappBtn && whatsappChatBox) {
         whatsappChatBox.classList.remove('active');
     });
 }
-// Quick View Logic
+// Quick View Modal Logic
 const qvModal = document.getElementById('quick-view-modal');
 const closeQv = document.querySelector('.close-modal-btn');
+const backdrop = document.querySelector('.modal-backdrop');
 
-// Har product card mein ek "Quick View" button add karna hoga
-// Agar button nahi hai, to card par click karne se modal khule ga
+// Open modal on product click
 document.querySelectorAll('.product-card').forEach(card => {
     card.addEventListener('click', (e) => {
-        if(e.target.classList.contains('add-to-cart-btn')) return; // Cart button ko ignore karein
-        
+
+        // Cart button ko ignore karein
+        if (e.target.classList.contains('add-to-cart-btn')) return;
+
         const title = card.querySelector('h3').innerText;
         const price = card.querySelector('.price').innerText;
         const img = card.querySelector('img').src;
-        
+
         document.getElementById('qv-title').innerText = title;
         document.getElementById('qv-price').innerText = price;
         document.getElementById('qv-img').src = img;
-        document.getElementById('qv-desc').innerText = "Premium quality skincare essential designed for your daily routine.";
-        
+        document.getElementById('qv-desc').innerText =
+            "Premium quality skincare essential designed for your daily routine.";
+
         qvModal.style.display = 'flex';
     });
+});
+
+// Close modal (X button)
+closeQv.addEventListener('click', () => {
+    qvModal.style.display = 'none';
+});
+
+// Close modal (backdrop click)
+backdrop.addEventListener('click', () => {
+    qvModal.style.display = 'none';
 });
