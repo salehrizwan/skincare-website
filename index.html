@@ -3,14 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Saima Rizwan | Premium Skincare</title>
+<meta property="og:url" content="https://salehrizwan.github.io/skincare-website/">
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Saima Rizwan Premium Skincare - Herbal Wax, Oils & Clean Beauty Rituals for glowing skin.">
+    <meta name="keywords" content="skincare, herbal wax, acne treatment, hair oil, natural beauty">
+    <meta name="author" content="Saima Rizwan">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Saima Rizwan | Premium Skincare">
+    <meta property="og:description" content="Herbal wax, natural oils & clean beauty rituals for glowing skin.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/preview.png">
+    <meta property="og:url" content="https://yourwebsite.com">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Saima Rizwan | Premium Skincare">
+    <meta name="twitter:description" content="Clean herbal skincare for glowing and healthy skin.">
+    <meta name="twitter:image" content="images/preview.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/logo.png">
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-fontawesome/6.4.0/css/all.min.css">
-    <!-- Font Awesome Link for Stars -->
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Main CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -146,7 +172,7 @@
         </div>
     </div>
 
-    <!-- Product 2 (Cream/Oil) -->
+    
     <div class="product-card" data-category="cream">
         <div class="product-img">
             <!-- Primary Image -->
@@ -164,7 +190,7 @@
         </div>
     </div>
 
-    <!-- Product 3 (Cream/Oil) -->
+    
     <div class="product-card" data-category="cream">
         <div class="product-img">
             <!-- Primary Image -->
@@ -224,6 +250,7 @@
     </section>
 
     <section id="contact" class="contact-section">
+        
         <div class="newsletter-box">
             <h2>Join the Inner Circle</h2>
             <p>Subscribe to receive exclusive skincare tips, product launches, and 15% off your first order.</p>
@@ -325,7 +352,23 @@
             </form>
         </div>
     </div> 
-    
+    <div id="quick-view-modal" class="quick-view-modal">
+    <div class="modal-backdrop"></div>
+    <div class="modal-container">
+        <span class="close-modal-btn">&times;</span>
+        <div class="modal-content-wrapper">
+            <div class="modal-img">
+                <img id="qv-img" src="" alt="Product">
+            </div>
+            <div class="modal-info">
+                <h2 id="qv-title">Product Name</h2>
+                <p id="qv-price" class="price"></p>
+                <p id="qv-desc" class="desc"></p>
+                <button class="btn" id="qv-add-cart">THANK You</button>
+            </div>
+        </div>
+    </div>
+</div>
     
     <footer>
         <div class="footer-content">
